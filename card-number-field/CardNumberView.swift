@@ -9,6 +9,17 @@
 import Foundation
 import UIKit
 
+/// Protocol for listening to CardNumberView updates
+protocol CardNumberViewDelegate: NSObjectProtocol {
+
+    /// Called when the CardNumberView has finished entering the card number and should move onto the next field
+    ///
+    /// - Parameters:
+    ///   - cardNumberView: the CardNumberView in question
+    ///   - number: the card number that is currently inputted
+    func cardNumberView(_ cardNumberView: CardNumberView, cardNumberFieldShouldReturnWithNumber number: String)
+}
+
 class CardNumberView: UIView {
 
     /// Initial text view for unrecognised cards
@@ -19,6 +30,9 @@ class CardNumberView: UIView {
 
     /// Stack view containing layout for 4 text fields
     @IBOutlet weak var fourFieldsView: UIStackView?
+
+    /// Delegate to receive updates
+    weak var delegate: CardNumberViewDelegate?
 
     fileprivate var threeFieldsTextViews: [CardNumberField] {
         guard let views = threeFieldsView?.arrangedSubviews as? [CardNumberField] else {
@@ -108,23 +122,16 @@ extension CardNumberView: UITextFieldDelegate {
 
         let fieldsCount = numberOfFields(forNumber: cardNumber)
 
-        switch (textField.tag, fieldsCount) {
-        case (0, 3):
-            threeFieldsTextViews[1].becomeFirstResponder()
-        case (0, 4):
-            fourFieldsTextViews[1].becomeFirstResponder()
-        case (1, 3):
-            threeFieldsTextViews[2].becomeFirstResponder()
-        case (1, 4):
-            fourFieldsTextViews[2].becomeFirstResponder()
-        case (2, 3):
-            print("finished, move onto card expiry")
-        case (2, 4):
-            fourFieldsTextViews[3].becomeFirstResponder()
-        case (3, 4):
-            print("finished, move onto next field")
-        default:
-            break
+        guard fieldsCount != 1 else {
+            return
+        }
+
+        if fieldsCount == 3, textField.tag < 2 {
+            threeFieldsTextViews[textField.tag + 1].becomeFirstResponder()
+        } else if fieldsCount == 4, textField.tag < 3 {
+            fourFieldsTextViews[textField.tag + 1].becomeFirstResponder()
+        } else if fieldsCount == textField.tag + 1 {
+            delegate?.cardNumberView(self, cardNumberFieldShouldReturnWithNumber: cardNumber)
         }
     }
 }
