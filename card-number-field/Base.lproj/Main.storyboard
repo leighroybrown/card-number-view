@@ -22,7 +22,7 @@
                                 <rect key="frame" x="30" y="323.5" width="315" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iEa-DS-j0X" userLabel="Single Field" customClass="CardNumberField" customModule="card_number_field" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="3" width="305" height="34"/>
+                                        <rect key="frame" x="5" y="0.0" width="305" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="cc-number"/>
@@ -152,9 +152,9 @@
                                     <constraint firstAttribute="trailing" secondItem="8b2-jR-pOT" secondAttribute="trailing" id="Hbk-3u-nir"/>
                                     <constraint firstItem="OQH-eQ-pNr" firstAttribute="leading" secondItem="i6N-I7-r1v" secondAttribute="leading" id="QCm-Pw-yu2"/>
                                     <constraint firstAttribute="height" constant="40" id="Tur-vz-Stj"/>
-                                    <constraint firstAttribute="bottom" secondItem="iEa-DS-j0X" secondAttribute="bottom" constant="3" id="YDr-wp-p7p"/>
+                                    <constraint firstAttribute="bottom" secondItem="iEa-DS-j0X" secondAttribute="bottom" id="YDr-wp-p7p"/>
                                     <constraint firstItem="8b2-jR-pOT" firstAttribute="top" secondItem="i6N-I7-r1v" secondAttribute="top" id="cIg-FS-ljw"/>
-                                    <constraint firstItem="iEa-DS-j0X" firstAttribute="top" secondItem="i6N-I7-r1v" secondAttribute="top" constant="3" id="kNu-j3-SfF"/>
+                                    <constraint firstItem="iEa-DS-j0X" firstAttribute="top" secondItem="i6N-I7-r1v" secondAttribute="top" id="kNu-j3-SfF"/>
                                     <constraint firstAttribute="bottom" secondItem="8b2-jR-pOT" secondAttribute="bottom" id="ktj-Xn-sLG"/>
                                     <constraint firstAttribute="trailing" secondItem="iEa-DS-j0X" secondAttribute="trailing" constant="5" id="mPe-f4-dPI"/>
                                     <constraint firstAttribute="trailing" secondItem="OQH-eQ-pNr" secondAttribute="trailing" id="rzM-lJ-Ocb"/>
