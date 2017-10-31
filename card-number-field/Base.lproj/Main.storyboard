@@ -35,7 +35,7 @@
                                             <outlet property="delegate" destination="i6N-I7-r1v" id="YFE-mz-drY"/>
                                         </connections>
                                     </textField>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OQH-eQ-pNr" userLabel="Three Stack">
+                                    <stackView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OQH-eQ-pNr" userLabel="Three Stack">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="xxxx" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BAJ-xo-mex" customClass="CardNumberField" customModule="card_number_field" customModuleProvider="target">
@@ -82,7 +82,7 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="8b2-jR-pOT" userLabel="Four Stack">
+                                    <stackView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="8b2-jR-pOT" userLabel="Four Stack">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="xxxx" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ydY-MS-Wyk" customClass="CardNumberField" customModule="card_number_field" customModuleProvider="target">

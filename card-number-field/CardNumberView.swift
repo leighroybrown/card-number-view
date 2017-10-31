@@ -182,12 +182,12 @@ private extension CardNumberView {
             return
         }
 
+        field.isHidden = false
         UIView.animate(withDuration: 0.2, animations: {
             self.singleField?.alpha     = 1.0
             self.threeFieldsView?.alpha = 0.0
             self.fourFieldsView?.alpha  = 0.0
         }, completion: { completed in
-            self.singleField?.isHidden     = false
             self.threeFieldsView?.isHidden = true
             self.fourFieldsView?.isHidden  = true
         })
@@ -205,13 +205,13 @@ private extension CardNumberView {
             return
         }
 
+        field.isHidden = false
         UIView.animate(withDuration: 0.2, animations: {
             self.singleField?.alpha     = 0.0
             self.threeFieldsView?.alpha = 1.0
             self.fourFieldsView?.alpha  = 0.0
         }, completion: { completed in
             self.singleField?.isHidden     = true
-            self.threeFieldsView?.isHidden = false
             self.fourFieldsView?.isHidden  = true
         })
 
@@ -230,6 +230,7 @@ private extension CardNumberView {
             return
         }
 
+        field.isHidden = false
         UIView.animate(withDuration: 0.2, animations: {
             self.singleField?.alpha     = 0.0
             self.threeFieldsView?.alpha = 0.0
@@ -237,7 +238,6 @@ private extension CardNumberView {
         }, completion: { completed in
             self.singleField?.isHidden     = true
             self.threeFieldsView?.isHidden = true
-            self.fourFieldsView?.isHidden  = false
         })
 
         threeFieldsTextViews.forEach({$0.text = ""})
