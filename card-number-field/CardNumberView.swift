@@ -152,6 +152,9 @@ extension CardNumberView: UITextFieldDelegate {
         }
     }
 
+    /// Update which CardNumberField should have keyboard focus
+    ///
+    /// - Parameter textField: the last CardNumberField to be edited
     func updateTextFieldTarget(_ textField: CardNumberField) {
         guard let text = textField.text, text.characters.count == textField.maxLength else {
             return
