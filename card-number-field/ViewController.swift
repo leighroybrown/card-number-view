@@ -20,6 +20,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBOutlet weak var cardNumberView: CardNumberView!
 
+    @IBAction func scanCardPressed(_ sender: Any) {
+        cardNumberView.updateWithCardNumber("378282246310005")
+    }
 }
 

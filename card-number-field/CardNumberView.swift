@@ -64,6 +64,43 @@ class CardNumberView: UIView {
 
         return singleFieldText + three + four
     }
+
+    /// Update the card field with a full card number
+    ///
+    /// - Parameter number: the card number to format to
+    func updateWithCardNumber(_ number: String) {
+        var split = number.map { String($0) }
+        var fields: [CardNumberField] = []
+
+        let numFields = numberOfFields(forNumber: number)
+        switch numFields {
+        case 3:
+            updateForThreeFields(number: "")
+            fields = threeFieldsTextViews
+        case 4:
+            updateForFourFields(number: "")
+            fields = fourFieldsTextViews
+        default:
+            updateForSingleField()
+            singleField?.text = number
+            return
+        }
+
+        for field in fields {
+            let endIndex = field.maxLength - 1
+
+            guard split.count > endIndex else {
+                return
+            }
+
+            let string   = split[0...endIndex].joined()
+            field.text   = string
+            split.removeSubrange(0...endIndex)
+            field.becomeFirstResponder()
+        }
+
+        delegate?.cardNumberView(self, cardNumberFieldShouldReturnWithNumber: number)
+    }
 }
 
 // MARK: - UITextFieldDelegate

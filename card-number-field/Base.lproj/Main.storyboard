@@ -158,15 +158,31 @@
                                     <outlet property="threeFieldsView" destination="OQH-eQ-pNr" id="JeZ-0w-K2d"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bU6-AI-peu">
+                                <rect key="frame" x="124" y="558" width="127" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="SEW-A3-GQC"/>
+                                    <constraint firstAttribute="height" constant="43" id="WXS-eE-ZMP"/>
+                                </constraints>
+                                <state key="normal" title="Scanned Card"/>
+                                <connections>
+                                    <action selector="scanCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nUP-PS-Zlv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="i6N-I7-r1v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="ITh-wr-TVi"/>
+                            <constraint firstItem="bU6-AI-peu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UBT-1H-WbD"/>
                             <constraint firstItem="i6N-I7-r1v" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="10" id="X4p-hd-KXm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bU6-AI-peu" secondAttribute="bottom" constant="66" id="sBo-dY-bwY"/>
                             <constraint firstAttribute="trailing" secondItem="i6N-I7-r1v" secondAttribute="trailing" constant="30" id="t8g-eo-sql"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cardNumberView" destination="i6N-I7-r1v" id="gBd-BZ-viq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
