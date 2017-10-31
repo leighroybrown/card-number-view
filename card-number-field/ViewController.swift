@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var cardNumberView: CardNumberView!
 
     @IBAction func scanCardPressed(_ sender: Any) {
-        cardNumberView.updateWithCardNumber("378282246310005")
+        cardNumberView.updateWithCardNumber("4242424242424242")
     }
 }
 

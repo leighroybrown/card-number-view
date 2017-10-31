@@ -21,11 +21,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6N-I7-r1v" customClass="CardNumberView" customModule="card_number_field" customModuleProvider="target">
                                 <rect key="frame" x="30" y="323.5" width="315" height="40"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iEa-DS-j0X" userLabel="Single Field">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iEa-DS-j0X" userLabel="Single Field" customClass="CardNumberField" customModule="card_number_field" customModuleProvider="target">
                                         <rect key="frame" x="5" y="3" width="305" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="cc-number"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                <integer key="value" value="19"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="i6N-I7-r1v" id="YFE-mz-drY"/>
+                                        </connections>
                                     </textField>
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OQH-eQ-pNr" userLabel="Three Stack">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="40"/>
@@ -159,9 +167,8 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bU6-AI-peu">
-                                <rect key="frame" x="124" y="558" width="127" height="43"/>
+                                <rect key="frame" x="139" y="558" width="97" height="43"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="127" id="SEW-A3-GQC"/>
                                     <constraint firstAttribute="height" constant="43" id="WXS-eE-ZMP"/>
                                 </constraints>
                                 <state key="normal" title="Scanned Card"/>

@@ -23,7 +23,7 @@ protocol CardNumberViewDelegate: NSObjectProtocol {
 class CardNumberView: UIView {
 
     /// Initial text view for unrecognised cards
-    @IBOutlet weak var singleField: UITextField?
+    @IBOutlet weak var singleField: CardNumberField?
 
     /// Stack view containing layout for 3 text fields
     @IBOutlet weak var threeFieldsView: UIStackView?
@@ -159,15 +159,12 @@ extension CardNumberView: UITextFieldDelegate {
 
         let fieldsCount = numberOfFields(forNumber: cardNumber)
 
-        guard fieldsCount != 1 else {
-            return
-        }
-
-        if fieldsCount == 3, textField.tag < 2 {
+        switch fieldsCount {
+        case 3 where textField.tag < 2:
             threeFieldsTextViews[textField.tag + 1].becomeFirstResponder()
-        } else if fieldsCount == 4, textField.tag < 3 {
+        case 4 where textField.tag < 3:
             fourFieldsTextViews[textField.tag + 1].becomeFirstResponder()
-        } else if fieldsCount == textField.tag + 1 {
+        default:
             delegate?.cardNumberView(self, cardNumberFieldShouldReturnWithNumber: cardNumber)
         }
     }
