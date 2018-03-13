@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="card_number_field" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6N-I7-r1v" customClass="CardNumberView" customModule="card_number_field" customModuleProvider="target">
+                                <rect key="frame" x="30" y="323.5" width="315" height="40"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iEa-DS-j0X" userLabel="Single Field" customClass="CardNumberField" customModule="card_number_field" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="0.0" width="305" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="cc-number"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                <integer key="value" value="19"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="i6N-I7-r1v" id="YFE-mz-drY"/>
+                                        </connections>
+                                    </textField>
+                                    <stackView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OQH-eQ-pNr" userLabel="Three Stack">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="40"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="xxxx" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BAJ-xo-mex" customClass="CardNumberField" customModule="card_number_field" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="98.5" height="40"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="cc-number"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="i6N-I7-r1v" id="atV-M2-14m"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="xxxxxx" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LrO-Nt-VKx" customClass="CardNumberField" customModule="card_number_field" customModuleProvider="target">
+                                                <rect key="frame" x="108.5" y="0.0" width="98" height="40"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="cc-number"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                        <integer key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="i6N-I7-r1v" id="zFc-5C-ZUb"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="xxxxx" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9fX-U9-BPM" customClass="CardNumberField" customModule="card_number_field" customModuleProvider="target">
+                                                <rect key="frame" x="216.5" y="0.0" width="98.5" height="40"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="cc-number"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="i6N-I7-r1v" id="Lck-Wb-gW5"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="8b2-jR-pOT" userLabel="Four Stack">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="40"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="xxxx" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ydY-MS-Wyk" customClass="CardNumberField" customModule="card_number_field" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="74.5" height="40"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="cc-number"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="i6N-I7-r1v" id="Caa-FP-fxu"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="xxxx" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sQO-Ps-ASA" customClass="CardNumberField" customModule="card_number_field" customModuleProvider="target">
+                                                <rect key="frame" x="80.5" y="0.0" width="74" height="40"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="cc-number"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="i6N-I7-r1v" id="wED-n3-aga"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="xxxx" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sf9-1w-fKQ" customClass="CardNumberField" customModule="card_number_field" customModuleProvider="target">
+                                                <rect key="frame" x="160.5" y="0.0" width="74.5" height="40"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="cc-number"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="i6N-I7-r1v" id="lL2-9t-jMD"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="xxxx" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sGc-SW-nZO" customClass="CardNumberField" customModule="card_number_field" customModuleProvider="target">
+                                                <rect key="frame" x="241" y="0.0" width="74" height="40"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="cc-number"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="i6N-I7-r1v" id="dOB-zY-Rom"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.49811251579999999" blue="0.88854261759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="8b2-jR-pOT" firstAttribute="leading" secondItem="i6N-I7-r1v" secondAttribute="leading" id="8KB-Ms-0Qb"/>
+                                    <constraint firstItem="iEa-DS-j0X" firstAttribute="leading" secondItem="i6N-I7-r1v" secondAttribute="leading" constant="5" id="BCP-XC-0zZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="OQH-eQ-pNr" secondAttribute="bottom" id="Bhh-pA-4I4"/>
+                                    <constraint firstAttribute="trailing" secondItem="8b2-jR-pOT" secondAttribute="trailing" id="Hbk-3u-nir"/>
+                                    <constraint firstItem="OQH-eQ-pNr" firstAttribute="leading" secondItem="i6N-I7-r1v" secondAttribute="leading" id="QCm-Pw-yu2"/>
+                                    <constraint firstAttribute="height" constant="40" id="Tur-vz-Stj"/>
+                                    <constraint firstAttribute="bottom" secondItem="iEa-DS-j0X" secondAttribute="bottom" id="YDr-wp-p7p"/>
+                                    <constraint firstItem="8b2-jR-pOT" firstAttribute="top" secondItem="i6N-I7-r1v" secondAttribute="top" id="cIg-FS-ljw"/>
+                                    <constraint firstItem="iEa-DS-j0X" firstAttribute="top" secondItem="i6N-I7-r1v" secondAttribute="top" id="kNu-j3-SfF"/>
+                                    <constraint firstAttribute="bottom" secondItem="8b2-jR-pOT" secondAttribute="bottom" id="ktj-Xn-sLG"/>
+                                    <constraint firstAttribute="trailing" secondItem="iEa-DS-j0X" secondAttribute="trailing" constant="5" id="mPe-f4-dPI"/>
+                                    <constraint firstAttribute="trailing" secondItem="OQH-eQ-pNr" secondAttribute="trailing" id="rzM-lJ-Ocb"/>
+                                    <constraint firstItem="OQH-eQ-pNr" firstAttribute="top" secondItem="i6N-I7-r1v" secondAttribute="top" id="yKk-6K-6Ac"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="fourFieldsView" destination="8b2-jR-pOT" id="HXC-Le-Fd3"/>
+                                    <outlet property="singleField" destination="iEa-DS-j0X" id="4xP-NO-hAv"/>
+                                    <outlet property="threeFieldsView" destination="OQH-eQ-pNr" id="JeZ-0w-K2d"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bU6-AI-peu">
+                                <rect key="frame" x="139" y="558" width="97" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="WXS-eE-ZMP"/>
+                                </constraints>
+                                <state key="normal" title="Scanned Card"/>
+                                <connections>
+                                    <action selector="scanCardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nUP-PS-Zlv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="i6N-I7-r1v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="ITh-wr-TVi"/>
+                            <constraint firstItem="bU6-AI-peu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UBT-1H-WbD"/>
+                            <constraint firstItem="i6N-I7-r1v" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="10" id="X4p-hd-KXm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bU6-AI-peu" secondAttribute="bottom" constant="66" id="sBo-dY-bwY"/>
+                            <constraint firstAttribute="trailing" secondItem="i6N-I7-r1v" secondAttribute="trailing" constant="30" id="t8g-eo-sql"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="cardNumberView" destination="i6N-I7-r1v" id="gBd-BZ-viq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="117.39130434782609"/>
+        </scene>
+    </scenes>
+</document>
